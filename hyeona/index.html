@@ -245,6 +245,7 @@
 									<button id="share-to-kakaostory">
 										카카오 스토리
 									</button>
+									<div id="kakaostory-share-button" data-url="https://dev.kakao.com"></div>
 								</div>
 								
 								<div class="col-xs-4 text-center">
@@ -273,16 +274,6 @@
 									fjs.parentNode.insertBefore(js, fjs);
 								}(document, 'script', 'facebook-jssdk'));
 								
-								window.fbAsyncInit = function() {
-									FB.init({
-										appId      : '134132606930854',
-										xfbml      : true,
-										version    : 'v2.4'
-									});
-								};
-								
-								
-								
 								!function(d,s,id){
 									var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
 									if(!d.getElementById(id)){js=d.createElement(s);
@@ -291,6 +282,24 @@
 									}
 								}(document, 'script', 'twitter-wjs');
 								
+								(function (d, s, id) {
+									var js, fjs = d.getElementsByTagName(s)[0];
+									if (d.getElementById(id)) return;
+									js = d.createElement(s); js.id = id;
+									js.src = "//developers.kakao.com/sdk/js/kakao.story.min.js";
+									fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'kakao-js-sdk'));
+								
+								
+								
+								
+								window.fbAsyncInit = function() {
+									FB.init({
+										appId      : '134132606930854',
+										xfbml      : true,
+										version    : 'v2.4'
+									});
+								};
 								
 								$(function() {
 									//페이스북 공유하기
@@ -306,10 +315,7 @@
 											console.log(response);
 										});
 									});
-								});
 									
-
-								$(function() {
 									//카카오스토리 공유하기
 									Kakao.init('757006e3861d0bbd6b09edb25dc43bc7');
 									Kakao.Story.createShareButton({
