@@ -300,6 +300,7 @@
 										version    : 'v2.4'
 									});
 								};
+								Kakao.init('757006e3861d0bbd6b09edb25dc43bc7');
 								
 								$(function() {
 									//페이스북 공유하기
@@ -315,14 +316,13 @@
 											console.log(response);
 										});
 									});
+								});
 									
-									//카카오스토리 공유하기
-									Kakao.init('757006e3861d0bbd6b09edb25dc43bc7');
-									Kakao.Story.createShareButton({
-										container: '#share-to-kakaostory',
-										url: 'http://rawgit.com/tkagksmsen/wedding/master/hyeona/index.html',
-										text: '현아님께서 결혼하십니다~'
-									});
+								//카카오스토리 공유하기
+								Kakao.Story.createShareButton({
+									container: '#share-to-kakaostory',
+									url: 'http://rawgit.com/tkagksmsen/wedding/master/hyeona/index.html',
+									text: '현아님께서 결혼하십니다~'
 								});
 									
 									
