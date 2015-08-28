@@ -303,21 +303,19 @@
 								Kakao.init('757006e3861d0bbd6b09edb25dc43bc7');
 								
 								$(function() {
-									//페이스북 공유하기
-									$("#share-to-facebook").click(function() {
-										FB.ui({
-											method: 'share_open_graph',
-											action_type: 'og.likes',
-											action_properties: JSON.stringify({
-												object:'http://rawgit.com/tkagksmsen/wedding/master/hyeona/index.html',
-											})
-										}, function(response){
-											// Debug response (optional)
-											console.log(response);
-										});
-									});
 								});
-									
+								
+								//페이스북 공유하기
+								$("#share-to-facebook").click(function() {
+									FB.ui({
+										method: 'share_open_graph',
+										action_type: 'og.likes',
+										action_properties: JSON.stringify({
+											object:'http://rawgit.com/tkagksmsen/wedding/master/hyeona/index.html',
+										})
+									}, function(response){});
+								});
+								
 								//카카오스토리 공유하기
 								Kakao.Story.createShareButton({
 									container: '#share-to-kakaostory',
